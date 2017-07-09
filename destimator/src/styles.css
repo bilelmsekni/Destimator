@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 10px;
+}
+
+.mat-slider-horizontal {
+  width: 300px;
+}
+
+.mat-slider-vertical {
+  height: 300px;
+}
+
+.circle-red {
+    background: red;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.circle-green {
+    background: green;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}

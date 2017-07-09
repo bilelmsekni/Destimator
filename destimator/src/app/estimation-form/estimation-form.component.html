@@ -1,0 +1,55 @@
+<div class="row" [formGroup]="estimationForm">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="example-h3">Are you cheating on your partner ? <i [hidden]="isTipHidden('cheatingOnPartnerLvl')"><md-icon class="circle-green" *ngIf="isCriteriaValid('cheatingOnPartnerLvl')">done</md-icon><md-icon class="circle-red" *ngIf="!isCriteriaValid('cheatingOnPartnerLvl')">clear</md-icon></i></h3>
+            </div>
+            <div class="col-md-4">
+                <md-button-toggle-group [vertical]=true formControlName="cheatingOnPartnerLvl">
+                    <md-button-toggle value="1">
+                        <md-icon>group_add</md-icon>
+                        Yes, but it's not my fault, they can't resist me
+                    </md-button-toggle>
+                    <md-button-toggle value="2">
+                        <md-icon>group</md-icon>
+                        mistakes happen from time to time you know
+                    </md-button-toggle>
+                    <md-button-toggle value="3">
+                        <md-icon>wc</md-icon>
+                        How dare you ! I love my partner very much
+                    </md-button-toggle>
+                </md-button-toggle-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="example-h3">Describe your daily adrenalin dose: <i [hidden]="isTipHidden('adrenalineDose')"><md-icon class="circle-green" *ngIf="isCriteriaValid('adrenalineDose')">done</md-icon><md-icon class="circle-red" *ngIf="!isCriteriaValid('adrenalineDose')">clear</md-icon></i></h3>
+            </div>
+            <div class="col-md-4">
+                <md-slider formControlName="adrenalineDose" class="example-margin" [max]="100" [min]="0" [step]="1" [thumb-label]="true">
+                </md-slider>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="example-h3"> Do you have any super hero friends ? <i [hidden]="isTipHidden('hasSuperHeroFriend')"><md-icon class="circle-green" *ngIf="isCriteriaValid('hasSuperHeroFriend')">done</md-icon><md-icon class="circle-red" *ngIf="!isCriteriaValid('hasSuperHeroFriend')">clear</md-icon></i></h3>
+            </div>
+            <div class="col-md-4">
+                <md-slide-toggle formControlName='hasSuperHeroFriend' class="example-margin">
+                    Yeah !
+                </md-slide-toggle>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+                <button (click)="submitForm()" md-fab><md-icon>check</md-icon></button>
+                <button (click)="resetForm()" md-fab color="warn"><md-icon>clear</md-icon></button>
+            </div>
+            <div class="col-md-4">
+                <app-estimation-result [result]="estimationResult"></app-estimation-result>
+            </div>
+        </div>
+    </div>
+</div>
