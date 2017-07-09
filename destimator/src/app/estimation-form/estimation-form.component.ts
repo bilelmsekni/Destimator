@@ -19,7 +19,7 @@ export class EstimationFormComponent implements OnInit {
             {
                 'cheatingOnPartnerLvl': ['', Validators.required],
                 'adrenalineDose': ['', Validators.required],
-                'hasSuperHeroFriend': ['', Validators.required]
+                'hasSuperHeroFriend': [false, Validators.required]
             }
         );
     }
@@ -27,7 +27,8 @@ export class EstimationFormComponent implements OnInit {
     public submitForm(): void {
         this.isSubmitted = true;
         if (this.estimationForm.valid) {
-            this.estimationResult = this.estimationLogic.estimate(this.estimationForm.value);
+            this.estimationLogic.estimate(this.estimationForm.value)
+                .subscribe(res => this.estimationResult = res);
         }
     }
 

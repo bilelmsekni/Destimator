@@ -1,0 +1,24 @@
+    {
+        "ranges": [
+            {
+                "maxScore": -100,
+                "message": "wow another Gandalf !",
+                "imageUrl": ""
+            },
+            {
+                "maxScore": 0,
+                "message": "wow a paul mcCarteny !",
+                "imageUrl": ""
+            },
+            {
+                "maxScore": 100,
+                "message": "wow another XxX !",
+                "imageUrl": ""
+            },
+            {
+                "maxScore": 200,
+                "message": "wow another 007 !",
+                "imageUrl": ""
+            }
+        ]
+    }
