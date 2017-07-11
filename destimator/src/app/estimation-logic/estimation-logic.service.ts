@@ -15,7 +15,8 @@ export class EstimationLogicService {
             .getRange(score)
             .map(range => <EstimationResult>{
                 value: score,
-                message: range.message
+                message: range.message,
+                imageUrl: range.imageUrl
             });
     }
 

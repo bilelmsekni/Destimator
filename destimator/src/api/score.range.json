@@ -3,22 +3,22 @@
             {
                 "maxScore": -100,
                 "message": "wow another Gandalf !",
-                "imageUrl": ""
+                "imageUrl": "http://i.imgur.com/MMzPSg9.gif"
             },
             {
                 "maxScore": 0,
-                "message": "wow a paul mcCarteny !",
-                "imageUrl": ""
+                "message": "wonder woman ;) !",
+                "imageUrl": "http://i.imgur.com/M1LONml.jpg"
             },
             {
                 "maxScore": 100,
-                "message": "wow another XxX !",
-                "imageUrl": ""
+                "message": "My name is ..",
+                "imageUrl": "http://i.imgur.com/RcAgtpv.png"
             },
             {
                 "maxScore": 200,
-                "message": "wow another 007 !",
-                "imageUrl": ""
+                "message": "kkkkeennnny !",
+                "imageUrl": "http://i.imgur.com/bpCiV3G.jpg"
             }
         ]
     }

@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-4">
                 <md-button-toggle-group [vertical]=true formControlName="cheatingOnPartnerLvl">
-                    <md-button-toggle value="1">
+                    <md-button-toggle value="3">
                         <md-icon>group_add</md-icon>
                         Yes, but it's not my fault, they can't resist me
                     </md-button-toggle>
@@ -14,7 +14,7 @@
                         <md-icon>group</md-icon>
                         mistakes happen from time to time you know
                     </md-button-toggle>
-                    <md-button-toggle value="3">
+                    <md-button-toggle value="1">
                         <md-icon>wc</md-icon>
                         How dare you ! I love my partner very much
                     </md-button-toggle>
@@ -43,12 +43,13 @@
         <br>
         <br>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <button (click)="submitForm()" md-fab><md-icon>check</md-icon></button>
                 <button (click)="resetForm()" md-fab color="warn"><md-icon>clear</md-icon></button>
             </div>
-            <div class="col-md-4">
-                <app-estimation-result [result]="estimationResult"></app-estimation-result>
+            <div *ngIf='estimationResult !== null'class="col-md-6">
+                <h1>{{estimationResult?.message}}</h1>
+                <img [src]='estimationResult?.imageUrl' />
             </div>
         </div>
     </div>

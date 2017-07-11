@@ -10,7 +10,7 @@ import { EstimationResult } from 'app/estimation-result/estimation-result.model'
 
 export class EstimationFormComponent implements OnInit {
     estimationForm: FormGroup;
-    estimationResult: EstimationResult;
+    estimationResult: EstimationResult = null;
     isSubmitted = false;
     constructor(private fb: FormBuilder, private estimationLogic: EstimationLogicService) { }
 
