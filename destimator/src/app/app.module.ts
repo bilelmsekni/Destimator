@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { EstimationFormComponent } from 'app/estimation-form/estimation-form.component';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { EstimationLogicService } from 'app/estimation-logic/estimation-logic.service';
-import { ScoreRangeService } from 'app/estimation-logic/score-ranges.service';
+import { ScoreRangeService } from 'app/estimation-logic/score-range.service';
 
 @NgModule({
   declarations: [

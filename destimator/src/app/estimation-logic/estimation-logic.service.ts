@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { EstimationInfo } from 'app/estimation-form/estimation-info.model';
-import { EstimationResult } from 'app/estimation-result/estimation-result.model';
-import { ScoreRangeService } from 'app/estimation-logic/score-ranges.service';
+import { EstimationResult } from 'app/estimation-form/estimation-result.model';
+import { ScoreRangeService } from 'app/estimation-logic/score-range.service';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()

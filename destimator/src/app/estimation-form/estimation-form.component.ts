@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EstimationLogicService } from 'app/estimation-logic/estimation-logic.service';
-import { EstimationResult } from 'app/estimation-result/estimation-result.model';
+import { EstimationResult } from 'app/estimation-form/estimation-result.model';
 
 @Component({
     selector: 'app-estimation-form',
