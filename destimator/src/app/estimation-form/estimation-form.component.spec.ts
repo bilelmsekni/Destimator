@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, async } from '@angular/core/testing';
 import { EstimationFormComponent } from 'app/estimation-form/estimation-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { expect } from 'chai';
@@ -54,7 +54,7 @@ describe('estimation form', () => {
         expect(estimationLogicSpy.called).to.be.true;
     });
 
-    it('should display error message when email is not valid', () => {
+    it('should display error message when email is not valid using fakeAsync', fakeAsync(() => {
         comp.ngOnInit();
         comp.estimationForm.setValue({
             cheatingOnPartnerLvl: 2,
@@ -62,9 +62,43 @@ describe('estimation form', () => {
             hasSuperHeroFriend: false,
             email: 'bad_email_format'
         });
+        tick(500);
         expect(comp.isValidEmail).to.be.false;
         fixture.detectChanges();
         expect(fixture.debugElement.query(By.css('.alert.alert-danger'))
             .nativeElement.innerText).to.be.eql('Please enter a valid email address');
+    }));
+
+    it('should display error message when email is not valid using async', async(() => {
+        comp.ngOnInit();
+        fixture.whenStable().then(() => {
+            expect(comp.isValidEmail).to.be.false;
+            fixture.detectChanges();
+            expect(fixture.debugElement.query(By.css('.alert.alert-danger'))
+                .nativeElement.innerText).to.be.eql('Please enter a valid email address');
+        });
+        comp.estimationForm.setValue({
+            cheatingOnPartnerLvl: 2,
+            adrenalineDose: 29,
+            hasSuperHeroFriend: false,
+            email: 'bad_email_format'
+        });
+    }));
+
+    it('should display error message when email is not valid using done', (done) => {
+        comp.ngOnInit();
+        comp.estimationForm.setValue({
+            cheatingOnPartnerLvl: 2,
+            adrenalineDose: 29,
+            hasSuperHeroFriend: false,
+            email: 'bad_email_format'
+        });
+        fixture.whenStable().then(() => {
+            expect(comp.isValidEmail).to.be.false;
+            fixture.detectChanges();
+            expect(fixture.debugElement.query(By.css('.alert.alert-danger'))
+                .nativeElement.innerText).to.be.eql('Please enter a valid email address');
+        });
+        done();
     });
 });
