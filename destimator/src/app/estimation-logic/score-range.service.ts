@@ -16,7 +16,7 @@ export class ScoreRangeService {
     }
 
     private getRanges(): Observable<ScoreRange[]> {
-        return this.http.get('../../api/score.range.json')
+        return this.http.get('api/score.range.json')
             .map(res => res.json().ranges as ScoreRange[]);
     }
 }
