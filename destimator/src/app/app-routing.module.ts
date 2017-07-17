@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { EstimationFormComponent } from 'app/estimation-form/estimation-form.component';
 
 const routes: Routes = [
-  { path: '', component: EstimationFormComponent }
+  { path: '**', component: EstimationFormComponent }
 ];
 
 @NgModule({
